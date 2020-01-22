@@ -1,3 +1,4 @@
+# - *- coding: utf- 8 - *-
 import json
 import os
 import time
@@ -5,7 +6,7 @@ import time
 import requests
 import telebot
 
-TOKEN = '1071519299:AAHaBlATLsQ5THcU-j-I6g8xZnpLjJSdC1M'
+TOKEN = os.getenv("TOKEN")
 bot = telebot.TeleBot(TOKEN)
 
 queue_array = []
@@ -52,8 +53,8 @@ def check_users(message):
                 queue_array.pop(i)
                 bot.send_message(message.chat.id, f'Checked! {message.from_user.first_name}')
                 # print("He has been removed from queue")
-    else:
-        bot.reply_to(message, 'I am still working (Это сообщение будет только в DEBUG моде)')
+    # else:
+    #     bot.reply_to(message, 'I am still working (Это сообщение будет только в DEBUG моде)')
 
 
 @bot.message_handler(content_types=["new_chat_members"])
