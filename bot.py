@@ -5,7 +5,7 @@ import time
 import requests
 import telebot
 
-TOKEN = os.getenv('TOKEN')
+TOKEN = '1071519299:AAHaBlATLsQ5THcU-j-I6g8xZnpLjJSdC1M'
 bot = telebot.TeleBot(TOKEN)
 
 queue_array = []
